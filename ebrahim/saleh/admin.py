@@ -9,8 +9,12 @@ from .models import news
 from .models import bookproduct
 from . models import book 
 from . models import Member 
+from . models import newproduct
+from . models import love
 
 
+admin.site.register(love)
+admin.site.register(newproduct)
 admin.site.register(Member)
 admin.site.register(book)
 admin.site.register(bookproduct)

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.views.generic import ListView
 from django.http import HttpResponse, request
-from .models import hacker , product , myname , news, bookproduct, book , Member
+from .models import hacker , product , myname , news, bookproduct, book , Member , newproduct , love
 from .forms import ProductForm
 
 
@@ -115,15 +115,23 @@ def engnews(request):
 
 
 
-# def add(request):
-#        va1 =int(request.GET["num1"])
-#        va2 = int(request.GET["num1"])
-#        res = (va1 + va2)
+def sem(request):
+       va1 = request.GET['num1']
+       va2 = request.GET['num1']
+       res = (va1 + va2)
+
+       return render(request, 'result.html', {'ebrahim':res})
+
+
+# def sem(request):
+#        va1 =int( request.POST["num1"])
+#        va2 = int(request.POST["num2"])
+#        res = int( va1 + va2)
 
 #        return render(request, 'result.html', {'ebrahim':res})
 
 
-def sem(request):
+def semm(request):
        va1 =int( request.POST["num1"])
        va2 = int(request.POST["num2"])
        res = int( va1 + va2)
@@ -154,7 +162,10 @@ def HomeView(request):
     return render( request,'book.html', context)
 
 
-
+class ProductList(ListView):
+    model = newproduct
+    # template_name_suffix = '_get'
+    template_name ='ami/ex.html'
 
 
 
@@ -162,5 +173,31 @@ class MemberList(ListView):
     model = Member
     # template_name_suffix = '_get'
     template_name ='ami/student.html'
-     
+
+
+for i in range(3):
+
+    def specsView(xxx):
+
+        model = love.objects.get(id=1)
+         
+        context = {
+                'love': model 
+               
+                }
+        return render( xxx,'ami/ex.html', context)
+
+
+ 
+class Love(ListView):
+    model = love
+    # template_name_suffix = '_get'
+    template_name ='ami/ex.html'
+
   
+
+# def specsView(request, param1, param2):
+#     param1 = request.GET['param1']
+#     param2 = request.GET['param2']
+  
+#     return render( request,'book.html', param1 )

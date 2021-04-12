@@ -37,12 +37,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="/member_list">member_list</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/ProductList">ProductList</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/specsView">love</a>
-              </li>
                
               
             </ul>
@@ -74,21 +68,107 @@
                 <li><a href="/bookproductsview">bookproductsview</a></li>
                 <li><a href="/HomeView">HomeView</a></li>
                 <li><a href="/member_list">member_list</a></li>
-                <li><a href="/ProductList">ProductList</a></li>
-                <li><a href="/specsView">love</a></li>
             </ul>
             {% endblock %}
         </div>
-      
-        <div class="container">
-            {% block content %}
-    
-            
-    
-            {% endblock %}
-          </div>
-         
+        {% block content %}
 
+
+
+        {% for member in object_list %}
+        
+
+        <div class="container ">
+        
+            <div class="row ">
+                
+            <div class="col md 6">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
+                <div class="card-header">
+                    {{object_list }} {{ member.last_name }}
+                </div>
+            
+                <div class="cardbody">
+                    <h5 class="card-title">{{ member.email }}  </h5>
+            </div>
+            </div>
+            </div>
+            
+            <div class="col md 6">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
+              <div class="card-header">
+                    {{ member.first_name }} {{ member.last_name }}
+                </div>
+            
+                <div class="cardbody">
+                    <h5 class="card-title">{{ member.email }}  </h5>
+            </div>
+                </div>
+                </div>
+            
+            </div>
+        </div>
+        <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="container">
+      
+            <div class="card">
+                <div class="card-header">
+                    {{ member.first_name }} {{ member.last_name }}
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ member.email }}  </h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   
+                </div>
+              </div> -->
+    
+           
+
+                  
+                
+          
+              
+          
+          
+
+
+
+        </div>
+        <br>
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+          {% endfor %}
+          {% endblock %}
 
     <!-- Optional JavaScript; choose one of the two! -->
 

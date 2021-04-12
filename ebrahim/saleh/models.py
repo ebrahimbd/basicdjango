@@ -121,3 +121,31 @@ class Member(models.Model):
 
     def __str__(self):
         return f'{ self.first_name } { self.last_name }'
+
+
+
+
+
+
+
+class newproduct(models.Model):
+    title       = models.CharField(max_length=120) # max_length = required
+    description = models.TextField(blank=True, null=True)
+    price       = models.DecimalField(decimal_places=2, max_digits=10000)
+    summary     = models.TextField(blank=False, null=False)
+    featured    = models.BooleanField(default=False) # null=True, default=True
+
+    def __str__(self):
+        return "%s -  %s" % (self.title, self.description)
+
+
+
+class love(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+    # description = models.TextField(blank=True)
+    # your_stoory = models.TextField(blank=True)
+    # salehw = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title
