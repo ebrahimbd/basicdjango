@@ -1,0 +1,28 @@
+git remote -v
+
+git add .
+ 
+
+git config --global user.email "ebrahim16sust@gmail.com"
+git config --global user.name "ebrahimbd"
+ git commit -m "first commit"
+git push origin master
+
+if already uplode 
+
+git commit -m "first commit"
+git push -u origin main
+
+echo "# djangoupdate" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ebrahimbd/djangoupdate.git
+git push -u origin main
+
+
+if existing repojotory are i want fully changed
+
+git pull --rebase
+git push -f origin master
