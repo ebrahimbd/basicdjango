@@ -3,8 +3,8 @@ git remote -v
 git add .
  
 
-git config --global user.email "ebrahim16sust@gmail.com"
-git config --global user.name "ebrahimbd"
+git config --global user.email " "
+git config --global user.name " "
  git commit -m "first commit"
 git push origin master
 
